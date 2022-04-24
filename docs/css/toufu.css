@@ -201,6 +201,28 @@ https://stackoverflow.com/questions/26372127/background-fixed-no-repeat-not-work
     background-size: cover;
 }
 
+.toufu-bg-img-half{
+    height: 50vh;
+}
+
+/*background-attachment: fixed;が使えない対処法
+https://stackoverflow.com/questions/26372127/background-fixed-no-repeat-not-working-on-mobile*/
+.toufu-bg-img::before {
+    content: "";
+    display: block;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -10;
+    background: url('../img/hi.JPG') no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
 
 .toufu-bg-img-full {
     position: fixed;
